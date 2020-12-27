@@ -1,0 +1,147 @@
+@import "./styles.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--background);
+    color: var(--text);
+    transition: var(--modeswap);
+}
+
+.full-height-grow {
+    flex-grow: 1;
+}
+
+/**********************
+Header
+**********************/
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    margin: 0;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--borders);
+    background-color: var(--background);
+    transition: var(--modeswap);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;  
+    transition: var(--modeswap); 
+}
+
+.header-logo h1 {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 2em;
+    color: var(--headings);
+    transition: var(--modeswap);
+}
+
+.setting-mode {
+    font-size: 1.5em;
+    color: var(--headings);
+    transition: var(--modeswap);
+}
+
+.setting-mode i {
+    margin: 0 0.5rem;
+}
+
+#light-dark-button {
+    cursor: pointer;
+}
+
+/**********************
+Side Menu
+**********************/
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: var(--background);
+    border-right: 1px solid var(--borders);
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: var(--modeswap);
+}
+
+.side-menu h2 {
+    margin-left: 1rem;
+    font-size: 1.5em;
+    color: var(--headings);
+    transition: var(--modeswap);
+}
+
+.main-nav {
+    border-top: 1px solid var(--borders);
+}
+
+.main-nav-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.main-nav-list li {
+    list-style: none;
+    display: flex;
+    flex-basis: 100px;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.main-nav-list a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1em;
+    transition: var(--modeswap);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-icon {
+    color: var(--text);
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    transition: var(--modeswap);
+}
+
+/**********************
+Interface
+**********************/
+
+.interface {
+    display: flex;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--alt-background);
+    transition: var(--modeswap);
+}

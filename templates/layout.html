@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTC</title>
+    <link rel="stylesheet" href="static/layout.css">
+    <script src="https://kit.fontawesome.com/a1a8b812e3.js" crossorigin="anonymous"></script>
+    {% block links %}{% endblock %}
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="header-logo">
+            <img src="static/graphics/placeholder.svg" alt="RTC logo">
+            <h1>RTC</h1>
+        </div>
+        <div class="setting-mode">
+            <i class="fas fa-cog"></i>
+            <i class="fas" id="light-dark-button"></i>
+        </div>
+    </header>
+    <main class="full-height-grow interface">
+        <section class="side-menu full-height-grow">
+            <h2>{% block menuhead %}{% endblock %}</h2>
+            <div class="full-height-grow">{% block menu %}{% endblock %}</div>
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li><a href="/journal" class="nav-item"><div class="nav-icon"><i class="fas fa-book"></i></div>Journal</a></li>
+                    <li><a href="#" class="nav-item"><div class="nav-icon"><i class="fas fa-calendar-check"></i></div>Schedule</a></li>
+                    <li><a href="#" class="nav-item"><div class="nav-icon"><i class="fas fa-tasks"></i></div>Goals</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="full-height-grow board">
+            {% block userarea %}{% endblock %}
+        </section>
+    </main>
+    <script src="static/index.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

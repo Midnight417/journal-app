@@ -1,0 +1,36 @@
+:root {
+    --headings: #1d1d1d;
+    --text: #6d6d6d;
+    --background: #f6f6f6;
+    --alt-background: white;
+    --section-background: #cccccc;
+    --selected-background: #dddddd;
+    --borders: grey;
+    --button-text: #f6f6f6;
+    --button-background: #6c63fe;
+    --modeswap: 0s;
+}
+
+.light {
+    --headings: #1d1d1d;
+    --text: #4d4d4d;
+    --background: #f6f6f6;
+    --alt-background: white;
+    --section-background: #cccccc;
+    --selected-background: #dddddd;
+    --button-text: #f6f6f6;
+    --button-background: #6c63fe;
+    --borders: grey;
+}
+
+.dark {
+    --headings: #f6f6f6;
+    --text: #bcbcbc;
+    --background: #3d3d3d;
+    --alt-background: #222222;
+    --section-background: #666666;
+    --selected-background: #2a2a2a;
+    --button-text: #f6f6f6;
+    --button-background: #6c63fe;
+    --borders: grey;
+}

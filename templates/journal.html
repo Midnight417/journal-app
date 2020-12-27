@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block links %}
+    <link rel="stylesheet" href="static/journal.css">
+{% endblock %}
+
+{% block menuhead %}My Journal{% endblock %}
+
+{% block menu %}
+    <form action="/newjournalentry" method="POST">
+        <button class="new-entry"><span>+</span> New Entry</button>
+    </form>
+
+    <section class="entry-section">
+    {% for section in sections %}
+        <div class="section-header" data-section="{{section['data']}}">
+            <h3>{{section["section"]}}</h3>
+            <i class="fas fa-sort-down"></i>
+        </div>
+
+        {% for entry in entries %}
+            {% if entry['section'] == section['section'] %}
+                <div class="entry" data-section="{{section['data']}}-entry" data-id="{{entry['id']}}">
+                    <form action="/deletejournalentry" method="POST">
+                        <button class="entry-icon" type="submit" disabled>
+                            <i class="fas fa-book"></i>
+                        </button>
+                        <input type="number" name="deletion-id" class="delete-id" value="{{entry['id']}}">
+                    </form>
+                    <div class="entry-info">
+                        <h4>{{entry['title']}}</h4>
+                        <p>{{entry['date']}}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+
+{% block userarea %}
+
+    <form class="journal-area" action="/journal" method="POST" autocomplete="off">
+        <input id="journal-id" name="journal-id" type="number" value="0">
+        <input id="journal-title" name="title" type="text" placeholder="Title" value="" maxlength="255">
+        <textarea id="journal-text" name="entry" placeholder="Write your thoughts here.."></textarea>
+        <button type="submit" class="save-button">Save</button>
+    </form>
+    <div class="empty-area">
+        <img src="static/graphics/relax.svg" alt="take a moment to relax" class="empty-img">
+        <hr class="empty-break">
+        <p class="empty-text">Take a moment to write down your thoughts...</p>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="static/journal.js"></script>
+    <script>
+        var entrylist = [];
+        {% for entry in entries %}
+            entrylist.push({
+                id: "{{entry['id']}}",
+                user_id: "{{entry['user_id']}}",
+                section: "{{entry['section']}}",
+                title: "{{entry['title']}}",
+                date: "{{entry['date']}}",
+                entry: `{{entry['entry']}}`,
+            });
+        {% endfor %}
+        pass(entrylist)
+    </script>
+{% endblock %}

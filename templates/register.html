@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTC Register</title>
+    <link rel="stylesheet" href="static/layout.css">
+    <link rel="stylesheet" href="static/login-register.css">
+    <script src="https://kit.fontawesome.com/a1a8b812e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-logo">
+            <img src="static/graphics/placeholder.svg" alt="RTC logo">
+            <h1>RTC</h1>
+        </div>
+        <div class="setting-mode">
+            <i class="fas fa-cog"></i>
+            <i class="fas" id="light-dark-button"></i>
+        </div>
+    </header>
+    <main class="full-height-grow login-register-area">
+
+        <img src="static/graphics/writing.svg" alt="two people writing" class="graphic-left">
+        <section class="form-section ">
+            {% for message in get_flashed_messages() %}
+                <p class="flash">{{ message }}</p>
+            {% endfor %}
+            <form action="/register" method="POST" class="login-register-form">
+                <input class="login-register-input" name="username" type="text" placeholder="Username" autocomplete="off">
+                <input class="login-register-input" name="password" type="password" placeholder="Password"autocomplete="off">
+                <input class="login-register-input" name="passwordconfirm" type="password" placeholder="Confirm Password"autocomplete="off">
+                <button class="submit-btn">Submit</button>
+            </form>
+        </section>
+        <img src="static/graphics/writing.svg" alt="two people writing" class="graphic-right">
+       
+    </main>
+    <script src="static/index.js"></script>
+</body>
+</html>

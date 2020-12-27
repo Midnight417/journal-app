@@ -1,0 +1,70 @@
+@import "./styles.css";
+
+.submit-btn {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.25em;
+    border-radius: 2.5rem;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: 2px solid var(--button-background);
+    outline: none;
+    cursor: pointer;
+    transition: var(--modeswap);
+}
+
+.login-register-input {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.25em;
+    border-radius: 2.5rem;
+    background-color: var(--alt-background);
+    color: var(--text);
+    border: 1px solid var(--borders);
+    outline: none;
+    transition: var(--modeswap);
+}
+
+.login-register-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+
+.login-register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.graphic-left, .graphic-right {
+    height: 70vh;
+    width: auto;
+}
+
+.graphic-left {
+    transform: translateX(-17vw);
+}
+
+
+.graphic-right {
+    transform: translateX(15.3vw);
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+}
+
+.flash {
+    top: 100px;
+    position: absolute;
+}
